@@ -1,5 +1,6 @@
 package agaluno.mvc.entidades;
 
+
 import java.time.Instant;
 
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
+
 
 @Entity
 public class Instituicao {
