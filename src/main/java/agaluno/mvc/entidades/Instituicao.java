@@ -1,7 +1,19 @@
 package agaluno.mvc.entidades;
 
+import java.time.Instant;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+
+@Entity
 public class Instituicao {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private String sigla;
@@ -9,6 +21,11 @@ public class Instituicao {
 	private String rua;
 	private String cidade;
 	private String estado;
+	
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	private Instant createdAt;
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	private Instant updateAt;
 
 	public Instituicao(int id, String nome, String sigla, int cep, String rua, String cidade, String estado) {
 		this.id = id;
@@ -22,6 +39,22 @@ public class Instituicao {
 	public Instituicao() {
 		
 	}
+	
+	public Instant getCreatedAt() {
+		return createdAt;
+	}
+	public Instant getUpdateAt() {
+		return updateAt;
+	}
+	@PrePersist
+	public void prePersit() {
+		createdAt = Instant.now();
+	}
+	@PreUpdate
+	public void preUpdate() {
+		updateAt = Instant.now();
+	}
+	
 	public int getId() {
 		return id;
 	}
