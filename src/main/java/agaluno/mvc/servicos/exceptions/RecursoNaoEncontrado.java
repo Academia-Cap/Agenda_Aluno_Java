@@ -1,4 +1,4 @@
-package agaluno.mvc.servicos.excessoes;
+package agaluno.mvc.servicos.exceptions;
 
 public class RecursoNaoEncontrado extends RuntimeException {
 	private static final long serialVersionUID = 1L;

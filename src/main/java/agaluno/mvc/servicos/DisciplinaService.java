@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 import agaluno.mvc.DTO.DisciplinaDTO;
 import agaluno.mvc.entidades.Disciplina;
-import agaluno.mvc.excessoes.DisciplinaNaoEncontrada;
 import agaluno.mvc.repositorios.DisciplinaRepositorio;
+import agaluno.mvc.servicos.exceptions.RecursoNaoEncontrado;
 
 @Service
 public class DisciplinaService {
@@ -46,7 +46,7 @@ public class DisciplinaService {
 	public DisciplinaDTO pegaDisciplina(int iddisciplina) {
 		Optional<Disciplina> obj = repo.findById(iddisciplina);
 		
-		Disciplina disc = obj.orElseThrow(() -> new DisciplinaNaoEncontrada("Disciplina não encontrada"));
+		Disciplina disc = obj.orElseThrow(() -> new RecursoNaoEncontrado("Disciplina não encontrada"));
 		return new DisciplinaDTO(disc);
 	}
 
@@ -54,7 +54,7 @@ public class DisciplinaService {
 
 	public DisciplinaDTO alterar(int iddisciplina, Disciplina disciplina) {
 		Optional<Disciplina> obj = repo.findById(iddisciplina);
-		Disciplina disc = obj.orElseThrow(() -> new DisciplinaNaoEncontrada("Disciplina não encontrada"));
+		Disciplina disc = obj.orElseThrow(() -> new RecursoNaoEncontrado("Disciplina não encontrada"));
 		
 		disc.setDisciplina(disciplina.getDisciplina());
 		disc.setAbreviacao(disciplina.getAbreviacao());

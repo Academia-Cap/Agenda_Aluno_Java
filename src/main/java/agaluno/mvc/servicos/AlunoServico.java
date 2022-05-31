@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import agaluno.mvc.DTO.AlunoDTO;
 import agaluno.mvc.entidades.Aluno;
 import agaluno.mvc.repositorios.AlunoRepositrio;
-import agaluno.mvc.servicos.excessoes.RecursoNaoEncontrado;
+import agaluno.mvc.servicos.exceptions.RecursoNaoEncontrado;
 
 @Service
 public class AlunoServico {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import agaluno.mvc.DTO.InstituicaoDTO;
 import agaluno.mvc.entidades.Instituicao;
 import agaluno.mvc.repositorios.InstituicaoRepositorio;
-import agaluno.mvc.servicos.excessoes.RecursoNaoEncontrado;
+import agaluno.mvc.servicos.exceptions.RecursoNaoEncontrado;
 
 
 

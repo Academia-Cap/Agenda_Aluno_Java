@@ -8,10 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import agaluno.mvc.servicos.excessoes.RecursoNaoEncontrado;
+import agaluno.mvc.servicos.exceptions.RecursoNaoEncontrado;
 
 public class ResourceExceptionHandler {
-	@ExceptionHandler(agaluno.mvc.servicos.excessoes.RecursoNaoEncontrado.class)
+	@ExceptionHandler(agaluno.mvc.servicos.exceptions.RecursoNaoEncontrado.class)
 	public ResponseEntity<StandardError> entidadeNaoEncontrada(RecursoNaoEncontrado e, HttpServletRequest req){
 		StandardError err = new StandardError();
 		err.setTimestamp(Instant.now());
