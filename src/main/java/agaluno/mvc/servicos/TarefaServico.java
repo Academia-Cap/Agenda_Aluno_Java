@@ -22,7 +22,7 @@ public class TarefaServico {
 		return new TarefaDTO(obj);
 	}
 
-	public List<TarefaDTO> getTodas(int idtarefa) {
+	public List<TarefaDTO> getTodas() {
 		List<Tarefa> tarefa = repo.findAll();
 		List<TarefaDTO> tarefaDTO = new ArrayList<>();		
 		
