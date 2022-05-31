@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import agaluno.mvc.entidades.Aluno;
 
-public interface AlunoRepositrio extends JpaRepository<Aluno, Integer>{
+public interface AlunoRepositorio extends JpaRepository<Aluno, Integer>{
 	
 }
