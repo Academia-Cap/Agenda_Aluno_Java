@@ -33,6 +33,7 @@ public class AlunoServico {
 		user.setEmail(aluno.getEmail());
 		user.setTelefone(aluno.getTelefone());
 		user.setUsuario(aluno.getUsuario());
+		user.setSenha(aluno.getSenha());
 		user = repo.save(user);
 		return new AlunoDTO(user);
 	}
