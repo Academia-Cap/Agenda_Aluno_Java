@@ -1,4 +1,4 @@
-package agTarefa.mvc.servicos;
+package agaluno.mvc.servicos;
 
 import java.util.ArrayList;
 import java.util.List;

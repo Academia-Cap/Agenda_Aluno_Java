@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Tarefa {
@@ -16,7 +18,13 @@ public class Tarefa {
 	private Date periodo;
 	private Time horaInicio;
 	private Time horaFinal;
+	
+	@OneToOne
+	@JoinColumn(name = "id_disciplina")
 	private Disciplina disciplina;
+	
+	@OneToOne
+	@JoinColumn(name = "id_aluno")
 	private Aluno aluno;
 
 	public Tarefa() {
